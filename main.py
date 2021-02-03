@@ -2,7 +2,6 @@ import discord
 import os
 import asyncio
 from discord.ext import commands
-from keep_alive import keep_alive
 
 bot = commands.Bot(command_prefix="t!")
 
@@ -20,5 +19,4 @@ async def on_message(message):
         await role.edit(mentionable=True)
         await message.channel.send(embed=discord.Embed(color=discord.Color.green(), description=":unlock: The help role is now unlocked."))
 
-keep_alive()
 bot.run(os.environ.get('BOT_TOKEN'))
